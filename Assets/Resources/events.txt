@@ -1,0 +1,99 @@
+1:
+Ultimamente la población a dejado de hacer ejercicio. ¿Se te ocurre alguna forma de solucionarlo?
+*Dejalos ser
+>>> Lo vagos se te unen pero la mayoría se mueren de una ataque al corazón.
+	+ 3 creyentes
+*Que recen haciendo el pino
+>>> La gente fan del fitness se te une. Tus creyentes ganan vitalidad y te lo agradecen con donaciones.
+>>> Los vagos se ponen en tu contra pero muchos se mueren de una ataque al corazón.
+	+ 10 creyentes
+	+ 50 dinero
+	+ 2 detractores
+2:
+Hay una escased de importación de pescado. ¿Con que sugieres que lo sustituyamos?
+*Con verdura.
+>>> El aumento de la verdura en la dieta de una sociedad que consume demasiada proteina hace que las 
+>>> facturas médicas de tus creyentes bajen y te donen más dinero.
+>>> Tus medidas se han hecho populares entre los vegetarianos y ahora te siguen.
+	+10 creyentes
+	+50 dinero
+*Con carne.
+>>> Tus seguidores compran carne pero debido a la subida de precios pueden donarte menos dinero.
+>>> Los animalistas se manifiestan en tu contra por perpetuar el sufrimiento animal en la industria carnicera.
+	+5 detractores
+	-10 dinero
+3:
+Hemos encontrado un ojeto extraño. ¿Deberíamos cogerlo o destruirlo?
+*Tomalo adoradlo pues es un regalo de dios.
+1>>> Era una piedra radiactiva. Algunos creyentes han muerto de cancer y tienes que pagar una indemnización a su familia.
+	-5 creyentes
+	-50 dinero
+2>>> El objeto crea expectación y se crea una atracción turística a su alrededor. Gracias a los visitantes ganas 
+2>>> mucho dinero.
+	+200 dinero
+*Quémalo y deshazte de sus cenizas.
+>>> Tus subditos han seguido tus instrucciones. Nada ha cambiado.
+4:
+Un viejo vagabundo afirma que nuestro dios Cthulu es falso y que eres un vendemotos.
+*Encerradle en un psiquiátrico
+>>> Consigues acallarle pero como el señor no tiene familia tienes que pagas la factura médica.
+	-10 dinero
+*Dejadle hablar. La verdad siempre sale a la luz.
+>>>Pocos hacen caso al hombre devido a la aporofobia. No pierdes muchos seguidores pero la duda se siembra en algunos
+corazones. ¿Será verdad que estarán adorando a un monstruo inventado?
+	-2 creyentes
+5:
+Hay un enfermo con una diagnóstico desconocido. ¿Puedes curarle?
+*Por supuesto.
+1>>> No tienes poderes reales asi que el enfermo se muere y quedas como un pringado con bata.
+	-20 creyentes
+2>>> El enfermo se cura solo y te dan el crédito.
+	+20 creyentes
+*Tengo que bañar a mi tortuga.
+>>>La gente no se lo traga pero al menos no quedas en ridículo.
+	-5 creyentes
+6:
+Estamos planeando construir un centro comercial y necesitamos que nos ayudes a que una tienda nos venda su propiedad.
+¿Nos ayudas?
+*Si la recompensa en buena...
+>>>El proletariado se ponen en tu contra pero ganas bastante dinero.
+	+300 dinero
+	+10 detractores
+*Bajo ningún concepto os ayudaré a extorsionar.
+>>>Los obreros ven tu acción como un gesto de hermanamiento proletario y muchos cambian su parecer respecto a tu culto.
+	-5 detractores
+7:
+Deberíamos elegir un nuevo color para las paredes del colegio. ¿Cual prefieres?
+*Verde foforito como los colores del culto.
+>>>Un color tan llamativo distrae a los niños y las notas bajan. Los padres te acosan por tener tan mal gusto.
+	-5 creyentes
+*Amarillo pastel
+>>>A parte de algun niño que lamido la pared, no ha habido ningún incidente. Lo padres te ven como un buen lider.
+	+5 creyentes
+8:
+Necesitamos más dinero para hacer campañas de marketing. ¿De donde sacamos el dinero?
+*Damos menos ayudas a los pobres.
+>>>¡Qué cruel! Ahora mucha gente te odia. Felicidades.
+	+200 dinero
+	+10 detractores
+*Quitamos los coches privados
+>>>Ahora tienes que ir a pie pero el ahorro lo merece. A quien no le ha hecho tanta gracia es a tus creyentes adinerados
+>>>y han retirado alguna donación. En balance no salimos muy mal.
+	+30 dinero
+9:
+Hola. Me llamo Íñigo Montoya. Tú mataste a mi padre. Prepárate a morir.
+*Bueno... No te pongas tan intensito.
+>>>El muchacho se da cuenta de que estaba pagando contigo sus inseguridades internas y se hace tu amigo.
+	+1 creyente
+*¿Qué?
+>>>Pierdes la consciencia y despiertas en ropa interior en un parking. Se han llevado tu cartera con tu dinero y tus
+>>>cupones del super. Al menos tu cuerpo está intacto.
+	-20 dinero
+10:
+Uno de nuestros clientes no ha pagado sus deudas. ¿Le das una paliza? Pagamos bien.
+*Pero que soy profeta, no matón.
+>>>Has perdido una oportunidad de dinero, pero tampoco eras el indicado para el puesto.
+*Bueno, bueno... Siempre estoy abierto a todo tipos de negocios.
+>>>Como era de esperar, no eres capaz ni de rozarle. Y claro, te dan hasta en el carnet de identidad. Piensalo otra vez
+antes de meterte en lios raros.
+	-20 dinero
