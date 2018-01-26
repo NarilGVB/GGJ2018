@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 
 public class Localizacion : MonoBehaviour {
 
 	[SerializeField]
 	public List<Evento> lEventos = new List<Evento>();
 	public GameObject gestorEventos;
-	public int i;
 
 	//se puede realizar un array de eventos y un gestor oersonalizado que a partir de 
 	// cierta cantidad de eventos totales(en player) sacado se activen
@@ -129,11 +129,17 @@ public class Localizacion : MonoBehaviour {
 	void Update () {
 		
 	}
-	void OnMouseDown(){			
-		if (!(lEventos.Count == i - 1)) {
-			GetComponent<BoxCollider2D> ().enabled = false;
-			gestorEventos.GetComponent<GestoEventos> ().LanzarEvt ((Evento)lEventos [i],this.gameObject);
-			i++;
+	void OnMouseDown(){	
+		if (FindObjectOfType<Player> ().canPress) {
+			FindObjectOfType<Player> ().canPress = false;
+			if (lEventos.Count != 0) {
+				int numero = (int)Math.Ceiling ((float)UnityEngine.Random.Range (0, lEventos.Count));
+
+				GetComponent<BoxCollider2D> ().enabled = false;
+				gestorEventos.GetComponent<GestoEventos> ().LanzarEvt ((Evento)lEventos [numero], this.gameObject);
+
+				lEventos.Remove (lEventos [numero]);
+			}
 		}
 	}
 

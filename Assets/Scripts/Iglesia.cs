@@ -11,7 +11,8 @@ public class Iglesia : MonoBehaviour {
 	public GameObject gestorIglesia;
 
 	// Use this for initialization
-	void Start () {		
+	void Awake () {
+		GetComponent<BoxCollider2D>().enabled=false;
 	}
 	
 	// Update is called once per frame
@@ -29,6 +30,9 @@ public class Iglesia : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		//Debug.Log (evento);
-		gestorIglesia.GetComponent<GestorIglesia> ().LanzarEvt (evento, this.gameObject);
+		if (FindObjectOfType<Player> ().canPress) {
+			FindObjectOfType<Player> ().canPress = false;
+			gestorIglesia.GetComponent<GestorIglesia> ().LanzarEvt (evento, this.gameObject);
+		}
 	}
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Evento {
 	[System.Serializable]
 	public struct Accion{
+		[TextArea(2,5)]
 		public string text;
 		public string anim;
 		public Modificacion mod;
@@ -18,6 +19,7 @@ public class Evento {
 		public float hereges;
 	}
 
+	[TextArea(2,5)]
 	public string P;
 	public string R1;
 	public string R2;
