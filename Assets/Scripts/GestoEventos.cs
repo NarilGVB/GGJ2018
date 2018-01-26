@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
@@ -7,12 +8,15 @@ public class GestoEventos : MonoBehaviour {
 
 	public float tEvent;
 	//public ArrayList lEventos;
-	//public float tiempoAcumuladoEvnt;
+	public float tiempoAcumuladoEvnt;
+	public float tiempoAnimcion = 1f;
 	public GameObject eventoCard;
 	public GameObject eventoResp;
 	public Evento eventNow;
 
 	public GameObject objetoEvent;
+
+	//falta probar animaciones y sonidos
 
 	// Use this for initialization
 	void Start () {		
@@ -51,6 +55,7 @@ public class GestoEventos : MonoBehaviour {
 		if(tiempoAcumuladoEvnt>tEvent){
 			
 		}*/
+
 	}
 	public void LanzarEvt(Evento evt, GameObject puntoEvent){
 		
@@ -63,36 +68,57 @@ public class GestoEventos : MonoBehaviour {
 		eventoCard.transform.FindChild ("Rest1").gameObject.GetComponent<Button> ().GetComponentInChildren<Text> ().text = eventNow.R1;
 		eventoCard.transform.FindChild ("Rest1").gameObject.GetComponent<Button> ().onClick.AddListener (Respt1);
 
-		eventoCard.transform.FindChild ("Rest2").gameObject.GetComponent<Button> ().GetComponentInChildren<Text> ().text = eventNow.R1;
+		eventoCard.transform.FindChild ("Rest2").gameObject.GetComponent<Button> ().GetComponentInChildren<Text> ().text = eventNow.R2;
 		eventoCard.transform.FindChild ("Rest2").gameObject.GetComponent<Button> ().onClick.AddListener (Respt2);
 
 		eventoCard.transform.FindChild ("Image").gameObject.GetComponent<Image> ().overrideSprite = (Sprite)Resources.Load (evt.img, typeof(Sprite));
 	
 	}
-	public void Respt1(){
-		if (eventNow == null) {
-			eventoCard.SetActive (false);
-			Debug.Log ("Respuesta1");
-			//animacion
-			eventoResp.SetActive (true);
-			eventoResp.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = eventNow.txt1;
+	public void Respt1(){		
+		eventoCard.SetActive (false);
+		int numero = (int)Math.Ceiling ((float)UnityEngine.Random.Range (0, eventNow.opcion1.Count-1));
+		//objetoEvent.GetComponent<Animator> ().SetTrigger ((String)eventNow.opcion1 [numero].anim);
+		//Esperar animacion
+	
+		//Debug.Log ("Respuesta1");
+		//animacion
+		StartCoroutine (Wait1 (numero));
+	}
 
-			eventoResp.transform.FindChild ("Image").gameObject.GetComponent<Image> ().overrideSprite = (Sprite)Resources.Load (GetComponent<Player> ().img, typeof(Sprite));
-			eventoResp.transform.FindChild ("ButtonExit").gameObject.GetComponent<Button> ().onClick.AddListener (ExitResp);
-		}
+	public IEnumerator Wait1(int numero){
+		yield return new WaitForSeconds(tiempoAnimcion);
+
+		eventoResp.SetActive (true);
+		eventoResp.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = (String)eventNow.opcion1 [numero].text;
+
+		eventoResp.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = (Sprite)Resources.Load (GetComponent<Player> ().img, typeof(Sprite));
+		eventoResp.transform.FindChild ("ButtonExit").gameObject.GetComponent<Button> ().onClick.AddListener (ExitResp);
+		GetComponent<Player> ().Modificar (eventNow.opcion1[numero].mod);
+
 	}
 	public void Respt2(){
-		
-			eventoCard.SetActive (false);
-			Debug.Log ("Respuesta2");
-			//animacion
-			eventoResp.SetActive (true);
-			eventoResp.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = eventNow.txt2;
-			eventoResp.transform.FindChild ("Image").gameObject.GetComponent<Image> ().overrideSprite = (Sprite)Resources.Load (GetComponent<Player> ().img, typeof(Sprite));
-			eventNow.Respt2 (GetComponent<Player> ());
-			eventoResp.transform.FindChild ("ButtonExit").gameObject.GetComponent<Button> ().onClick.AddListener (ExitResp);
+			
+		eventoCard.SetActive (false);
+		//Debug.Log ("Respuesta2");
+		int numero = (int)Math.Ceiling ((float)UnityEngine.Random.Range (0, eventNow.opcion2.Count-1));
+		//objetoEvent.GetComponent<Animator> ().SetTrigger ((String)eventNow.opcion2 [numero].anim);
 
+		StartCoroutine (Wait2 (numero));
 	}
+
+	public IEnumerator Wait2(int numero){
+		yield return new WaitForSeconds(tiempoAnimcion);
+
+		eventoResp.SetActive (true);
+		//random
+		//primero el random luego animacion y luego texto
+		eventoResp.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = (String)eventNow.opcion2[numero].text;
+
+		eventoResp.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = (Sprite)Resources.Load (GetComponent<Player> ().img, typeof(Sprite));
+		eventoResp.transform.FindChild ("ButtonExit").gameObject.GetComponent<Button> ().onClick.AddListener (ExitResp);
+		GetComponent<Player> ().Modificar (eventNow.opcion2[numero].mod);
+	}
+
 	public void ExitResp(){
 		eventoResp.SetActive (false);
 		objetoEvent.GetComponent<BoxCollider2D> ().enabled = true;
