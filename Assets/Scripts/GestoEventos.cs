@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class GestoEventos : MonoBehaviour {
 
@@ -63,12 +64,12 @@ public class GestoEventos : MonoBehaviour {
 
 		eventNow = evt;
 		eventoCard.SetActive (true);
-		eventoCard.transform.FindChild ("Pregunta").gameObject.GetComponent<Text> ().text = eventNow.P;
+		eventoCard.transform.FindChild ("Pregunta").gameObject.GetComponent<TextMeshProUGUI> ().text = eventNow.P;
 
-		eventoCard.transform.FindChild ("Rest1").gameObject.GetComponent<Button> ().GetComponentInChildren<Text> ().text = eventNow.R1;
+		eventoCard.transform.FindChild ("Rest1").gameObject.GetComponent<Button> ().GetComponentInChildren<TextMeshProUGUI> ().text = eventNow.R1;
 		eventoCard.transform.FindChild ("Rest1").gameObject.GetComponent<Button> ().onClick.AddListener (Respt1);
 
-		eventoCard.transform.FindChild ("Rest2").gameObject.GetComponent<Button> ().GetComponentInChildren<Text> ().text = eventNow.R2;
+		eventoCard.transform.FindChild ("Rest2").gameObject.GetComponent<Button> ().GetComponentInChildren<TextMeshProUGUI> ().text = eventNow.R2;
 		eventoCard.transform.FindChild ("Rest2").gameObject.GetComponent<Button> ().onClick.AddListener (Respt2);
 
 		eventoCard.transform.FindChild ("Image").gameObject.GetComponent<Image> ().overrideSprite = (Sprite)Resources.Load (evt.img, typeof(Sprite));
@@ -76,7 +77,7 @@ public class GestoEventos : MonoBehaviour {
 	}
 	public void Respt1(){		
 		eventoCard.SetActive (false);
-		int numero = (int)Math.Ceiling ((float)UnityEngine.Random.Range (0, eventNow.opcion1.Count-1));
+		int numero = (int)Math.Ceiling ((float)UnityEngine.Random.Range (0, eventNow.opcion1.Count));
 		//objetoEvent.GetComponent<Animator> ().SetTrigger ((String)eventNow.opcion1 [numero].anim);
 		//Esperar animacion
 	
@@ -89,18 +90,20 @@ public class GestoEventos : MonoBehaviour {
 		yield return new WaitForSeconds(tiempoAnimcion);
 
 		eventoResp.SetActive (true);
-		eventoResp.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = (String)eventNow.opcion1 [numero].text;
-
-		eventoResp.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = (Sprite)Resources.Load (GetComponent<Player> ().img, typeof(Sprite));
+		eventoResp.transform.FindChild ("Text").gameObject.GetComponent<TextMeshProUGUI> ().text = (String)eventNow.opcion1 [numero].text;
 		eventoResp.transform.FindChild ("ButtonExit").gameObject.GetComponent<Button> ().onClick.AddListener (ExitResp);
 		GetComponent<Player> ().Modificar (eventNow.opcion1[numero].mod);
+
+		yield return new WaitForSeconds (.5f);
+
+		FindObjectOfType<Player> ().canPress = true;
 
 	}
 	public void Respt2(){
 			
 		eventoCard.SetActive (false);
 		//Debug.Log ("Respuesta2");
-		int numero = (int)Math.Ceiling ((float)UnityEngine.Random.Range (0, eventNow.opcion2.Count-1));
+		int numero = (int)Math.Ceiling ((float)UnityEngine.Random.Range (0, eventNow.opcion2.Count));
 		//objetoEvent.GetComponent<Animator> ().SetTrigger ((String)eventNow.opcion2 [numero].anim);
 
 		StartCoroutine (Wait2 (numero));
@@ -112,11 +115,13 @@ public class GestoEventos : MonoBehaviour {
 		eventoResp.SetActive (true);
 		//random
 		//primero el random luego animacion y luego texto
-		eventoResp.transform.FindChild ("Text").gameObject.GetComponent<Text> ().text = (String)eventNow.opcion2[numero].text;
-
-		eventoResp.transform.FindChild ("Image").gameObject.GetComponent<Image> ().sprite = (Sprite)Resources.Load (GetComponent<Player> ().img, typeof(Sprite));
+		eventoResp.transform.FindChild ("Text").gameObject.GetComponent<TextMeshProUGUI> ().text = (String)eventNow.opcion2[numero].text;
 		eventoResp.transform.FindChild ("ButtonExit").gameObject.GetComponent<Button> ().onClick.AddListener (ExitResp);
 		GetComponent<Player> ().Modificar (eventNow.opcion2[numero].mod);
+
+		yield return new WaitForSeconds (.5f);
+
+		FindObjectOfType<Player> ().canPress = true;
 	}
 
 	public void ExitResp(){

@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152118892f50f774ba367a3cd85412a6, type: 3}
+  m_Name: Events
+  m_EditorClassIdentifier: 
+  Hospital: []
+  Gim:
+  - P: "Ultimamente la poblaci\xF3n a dejado de hacer ejercicio.\n\xBFSe te ocurre
+      alguna forma de solucionarlo?"
+    R1: Dejalos ser.
+    R2: Que recen haciendo el pino.
+    textDouble: 0
+    opcion1:
+    - text: "Lo vagos se te unen pero la mayor\xEDa se mueren de una ataque al coraz\xF3n."
+      anim: 
+      mod:
+        adeptos: 3
+        money: 0
+        hereges: 0
+    opcion2:
+    - text: "La gente fan del fitness se te une. Tus creyentes ganan vitalidad y te
+        lo agradecen con donaciones. Los vagos se ponen en tu contra pero muchos se
+        mueren de una ataque al coraz\xF3n."
+      anim: 
+      mod:
+        adeptos: 10
+        money: 50
+        hereges: 2
+    img: 
+    localidad: {fileID: 0}
+  - P: "\xBFUna peque\xF1a donaci\xF3n para clases gimnasia a ni\xF1os discapacitados?"
+    R1: "\xA1C\xF3mo no!"
+    R2: Ni que fuese yo un banco
+    textDouble: 0
+    opcion1:
+    - text: "Por un poco de dinero consigues ayudar a la adaptaci\xF3n de distintas
+        disciplinas a las personas discapacitadas. La lucha contra el capacitismo
+        te llena de determinaci\xF3n."
+      anim: 
+      mod:
+        adeptos: 5
+        money: -20
+        hereges: 0
+    opcion2:
+    - text: "Los ni\xF1os sufren por que eres un racano. \xBFEs que nadie piensa en
+        los ni\xF1os?"
+      anim: 
+      mod:
+        adeptos: -5
+        money: 0
+        hereges: 5
+    img: 
+    localidad: {fileID: 0}
+  Tienda: []
+  Parque: []
+  Banco: []
+  Empresa: []
+  Estatua: []
