@@ -4,32 +4,27 @@ Ultimamente la población a dejado de hacer ejercicio. ¿Se te ocurre alguna forma
 >>> Lo vagos se te unen pero la mayoría se mueren de una ataque al corazón.
 	+ 3 creyentes
 *Que recen haciendo el pino
->>> La gente fan del fitness se te une. Tus creyentes ganan vitalidad y te lo agradecen con donaciones.
->>> Los vagos se ponen en tu contra pero muchos se mueren de una ataque al corazón.
+>>> La gente fan del fitness se te une. Tus creyentes ganan vitalidad y te lo agradecen con donaciones. Los vagos se ponen en tu contra pero muchos se mueren de una ataque al corazón.
 	+ 10 creyentes
 	+ 50 dinero
 	+ 2 detractores
 2:
 Hay una escased de importación de pescado. ¿Con que sugieres que lo sustituyamos?
 *Con verdura.
->>> El aumento de la verdura en la dieta de una sociedad que consume demasiada proteina hace que las 
->>> facturas médicas de tus creyentes bajen y te donen más dinero.
->>> Tus medidas se han hecho populares entre los vegetarianos y ahora te siguen.
+>>> El aumento de la verdura en la dieta de una sociedad que consume demasiada proteina hace que las facturas médicas de tus creyentes bajen y te donen más dinero.Tus medidas se han hecho populares entre los vegetarianos y ahora te siguen.
 	+10 creyentes
 	+50 dinero
 *Con carne.
->>> Tus seguidores compran carne pero debido a la subida de precios pueden donarte menos dinero.
->>> Los animalistas se manifiestan en tu contra por perpetuar el sufrimiento animal en la industria carnicera.
+>>> Tus seguidores compran carne pero debido a la subida de precios pueden donarte menos dinero.Los animalistas se manifiestan en tu contra por perpetuar el sufrimiento animal en la industria carnicera.
 	+5 detractores
 	-10 dinero
 3:
 Hemos encontrado un ojeto extraño. ¿Deberíamos cogerlo o destruirlo?
-*Tomalo adoradlo pues es un regalo de dios.
+*Tomalo y adoradlo pues es un regalo de dios.
 1>>> Era una piedra radiactiva. Algunos creyentes han muerto de cancer y tienes que pagar una indemnización a su familia.
 	-5 creyentes
 	-50 dinero
-2>>> El objeto crea expectación y se crea una atracción turística a su alrededor. Gracias a los visitantes ganas 
-2>>> mucho dinero.
+2>>> El objeto crea expectación y se crea una atracción turística a su alrededor. Gracias a los visitantes ganas mucho dinero.
 	+200 dinero
 *Quémalo y deshazte de sus cenizas.
 >>> Tus subditos han seguido tus instrucciones. Nada ha cambiado.

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3cf16e92add17324f86ed5c04d475591
+timeCreated: 1516937038
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cartoonic Massive
+  fontNames:
+  - Cartoonic Massive
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
